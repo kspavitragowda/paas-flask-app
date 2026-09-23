@@ -1,6 +1,6 @@
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask(**name**)
 
 @app.route("/")
 def home():
@@ -12,7 +12,7 @@ return """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaaS | Flask Application</title>
+    <title>PaaSify | Flask Application</title>
 
 ```
 <style>
@@ -32,7 +32,6 @@ return """
         color: #1f2937;
     }
 
-    /* Navigation */
     nav {
         width: 100%;
         padding: 20px 8%;
@@ -68,7 +67,6 @@ return """
         color: #2563eb;
     }
 
-    /* Hero */
     .hero {
         min-height: 82vh;
         display: flex;
@@ -137,7 +135,6 @@ return """
         background: #eff6ff;
     }
 
-    /* Illustration */
     .hero-card {
         width: 390px;
         padding: 35px;
@@ -164,7 +161,6 @@ return """
         font-size: 14px;
     }
 
-    /* Sections */
     section {
         padding: 80px 8%;
     }
@@ -184,7 +180,6 @@ return """
         color: #6b7280;
     }
 
-    /* Cards */
     .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -218,7 +213,6 @@ return """
         line-height: 1.6;
     }
 
-    /* How it works */
     .steps {
         max-width: 900px;
         margin: auto;
@@ -254,7 +248,6 @@ return """
         color: #6b7280;
     }
 
-    /* Footer */
     footer {
         background: #111827;
         color: white;
@@ -267,7 +260,6 @@ return """
         margin-top: 8px;
     }
 
-    /* Responsive */
     @media (max-width: 850px) {
         .hero {
             flex-direction: column;
@@ -286,17 +278,9 @@ return """
         .cards {
             grid-template-columns: 1fr;
         }
-
-        nav ul {
-            gap: 12px;
-        }
     }
 
     @media (max-width: 500px) {
-        nav {
-            padding: 16px 5%;
-        }
-
         nav ul {
             display: none;
         }
