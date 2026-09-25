@@ -1,0 +1,205 @@
+/* ================= RESET DEFAULT STYLES ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    background-color: #e0f7f7; /* Light teal background */
+    color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background-color: #008080; /* Teal navbar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.logo span {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+}
+.logo i {
+    color: #e6c200;
+    font-size: 2rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo i:hover {
+    transform: scale(1.2) rotate(-10deg); /* subtle hover effect */
+}
+
+
+
+.navbar a,
+.navbar a *,
+.navbar li,
+.navbar li * {
+    all: unset;
+}
+
+.navbar a {
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid #ffd700; /* Yellow hover */
+    color: #ffd700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+ul li a.active {
+    border-bottom: 2px solid #ffd700;
+    color: #ffd700;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+.container h1,
+.container h2 {
+    margin-bottom: 20px;
+    color: #008080; /* Teal headings */
+}
+
+/* Paragraph */
+.container p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Links inside container */
+.container a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #008080;
+    font-weight: bold;
+}
+
+/* ================= FORM ================= */
+form label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: #343a40; /* Dark text for labels */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    background-color: #ffd700; /* Yellow button */
+    color: #008080;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e6c200;
+}
+
+/* ================= TASK/EXPENSE LIST ================= */
+ul {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #c0f0f0; /* Light teal list item */
+    border-radius: 6px;
+    text-align: left;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Completed / Reviewed expense */
+.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Mark done/review link */
+ul li a {
+    margin-left: 10px;
+    color: #008080;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Small text inside list item */
+ul li small {
+    display: block;
+    color: #666;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+/* Progress / Total text */
+.progress {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #008080;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 500px) {
+    .container { padding: 20px; }
+    input[type="text"], input[type="number"], button, a { width: 100%; text-align: center; }
+    nav.navbar { flex-direction: column; gap: 10px; }
+    nav.navbar .nav-links { flex-direction: column; gap: 5px; }
+}
+
