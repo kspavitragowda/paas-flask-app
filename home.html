@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudySpend – Student Budget Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+           <i class="fa-solid fa-piggy-bank"></i>
+           <span>StudySpend</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('add_expense') }}">Add Expense</a></li>
+            <li><a href="{{ url_for('view_expenses') }}">View Expenses</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Welcome to StudySpend</h1>
+        <p>
+            StudySpend is a simple and smart budget tracker designed for students.
+            It helps you track daily expenses, manage your budget, and build healthy
+            financial habits.
+        </p>
+
+        <p>
+            Add your expenses, view spending summaries, and stay in control of your money.
+        </p>
+
+        <a href="{{ url_for('add_expense') }}">Get Started</a>
+    </div>
+
+</body>
+</html>

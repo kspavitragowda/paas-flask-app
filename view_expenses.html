@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Expenses - StudySpend</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-piggy-bank"></i>
+            <span>StudySpend</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('add_expense') }}">Add Expense</a></li>
+            <li><a href="{{ url_for('view_expenses') }}" class="active">View Expenses</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>All Expenses</h2>
+
+        <p class="progress"><strong>Total Expenses:</strong> ${{ total_amount }}</p>
+
+        <ul>
+            {% for expense in expenses %}
+                <li class="{% if expense.reviewed %}completed{% endif %}">
+                    <strong>Expense:</strong> {{ expense.name }} &nbsp; | &nbsp;
+                    <strong>Amount:</strong> ${{ "%.2f"|format(expense.amount) }} &nbsp; | &nbsp;
+                    <strong>Date:</strong> {{ expense.date_added.split(' ')[0] }} &nbsp; | &nbsp;
+                    <strong>Time:</strong> {{ expense.date_added.split(' ')[1] }}
+
+                    {% if not expense.reviewed %}
+                        &nbsp; | &nbsp;
+                        <a href="{{ url_for('review_expense', expense_id=loop.index0) }}">Mark Reviewed</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('add_expense') }}">Add More Expenses</a>
+    </div>
+
+</body>
+</html>
